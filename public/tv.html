@@ -1,16 +1,60 @@
 ﻿<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    
-    <title>TV-tablå</title>
-    
-    <meta name="description" content="Tv-tablå">
-    <meta name="author" content="SitePoint">
-    
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>TV-tablå</title>
+        
+        <meta name="description" content="Tv-tablå">
+        <meta name="author" content="SitePoint">
+        
+        <link rel="stylesheet" href="css/styles.css?v=1.0">
+        
+        <!-- Lite oklart varför vi ska ha de här två -->
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous"
+        />
+
+    </head>
+    <body>
+        <div class="menu">
+            <a href="" class="menu__link">SVT 1</a>
+            <a href="" class="menu__link">SVT 2</a>
+            <a href="" class="menu__link">SVT Barn</a>
+            <a href="" class="menu__link">Kunskapskanalen</a>
+            <a href="" class="menu__link">SVT 24</a>
+            <!-- Så här ser länkarna ut i förlagan:
+            <li onclick="setChannel('SVT 1')">
+                ::marker
+                SVT 1
+            </li> -->
+        </div>
+        <!-- div class container, row, col-sm osv -->
+        <div>
+            <h1 class="channel-title">
+                SVT 1
+            </h1>
+            <ul class="program-list">
+                <li class="program-list__item">
+                    13:00<br/>
+                    Vinterstudion
+                </li>
+                <li class="program-list__item">
+                    13:30<br/>
+                    Alpint: VM
+                </li>
+                <li class="program-list__item">
+                    14:30<br/>
+                    Vinterstudion
+                </li>
+            </ul>
+        </div>
+    </body>
 </html>
