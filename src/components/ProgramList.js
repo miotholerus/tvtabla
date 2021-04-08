@@ -7,7 +7,7 @@ const ProgramList = () => {
     useEffect(() => {
         const fetchPrograms = async () => {
             const programData = await fetch(
-                'url'
+                'https://tv-api-p2x2o.ondigitalocean.app/SVT 1.json'
             ).then((res) => res.json());
             
             setPrograms(programData);
@@ -20,7 +20,7 @@ const ProgramList = () => {
 
     return (<div>
         <h1 class="channel-title">
-            SVT {1+1}
+            SVT 1
         </h1>
         <ul class="program-list">
             {
