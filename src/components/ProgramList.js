@@ -1,23 +1,47 @@
-﻿import React from 'react';
+﻿import React, {useEffect, useState} from 'react';
 
 const ProgramList = () => {
+    
+    const [programs, setPrograms] = useState([]); // från början en tom array
+
+    useEffect(() => {
+        const fetchPrograms = async () => {
+            const programData = await fetch(
+                'url'
+            ).then((res) => res.json());
+            
+            setPrograms(programData);
+        };
+        if(!programs.length) {
+            fetchPrograms();
+        }
+    })
+
+
     return (<div>
         <h1 class="channel-title">
-            SVT 1
+            SVT {1+1}
         </h1>
         <ul class="program-list">
-            <li class="program-list__item">
-                13:00<br/>
-                Vinterstudion
-            </li>
-            <li class="program-list__item">
+            {
+                programs.map((program) => 
+                    <li class="program-list__item">
+                        {program.start}
+                        <br />
+                        {program.name}
+                    </li>
+                )
+            }
+            
+
+            {/* <li class="program-list__item">
                 13:30<br/>
                 Alpint: VM
             </li>
             <li class="program-list__item">
                 14:30<br/>
                 Vinterstudion
-            </li>
+            </li> */}
         </ul>
     </div>)
 }
