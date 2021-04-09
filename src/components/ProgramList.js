@@ -14,7 +14,7 @@ const ProgramList = ({channelName}) => { // const channelName = "SVT1"
 
         const fetchPrograms = async () => {
             const programData = await fetch(
-                'https://tv-api-p2x2o.ondigitalocean.app/SVT 1.json'
+                'https://tv-api-p2x2o.ondigitalocean.app/SVT 1.json'                // nu syns av någon anledning inte programlistan :C
             ).then((res) => res.json());
             
             setPrograms(programData);
@@ -25,19 +25,18 @@ const ProgramList = ({channelName}) => { // const channelName = "SVT1"
         }
     })
 
-
     return (<div>
         <h1 class="channel-title">
             SVT 1
         </h1>
         <ul class="program-list">
             {
-                programs.map((program) => 
+                programs.map((program) => {
                     <li class="program-list__item">
                         {program.start}
                         <br />
                         {program.name}
-                    </li>
+                    </li>}
                 )
             }
             
