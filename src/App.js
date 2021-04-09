@@ -1,25 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import ProgramList from './components/ProgramList';
+import Sidebar from './components/Sidebar';
 
 function App() {
+  // const [channel, setChannel] = useState("SVT 1") ...
+
   return (
     <div className="App">
-      <ProgramList />
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          yo
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <Sidebar setChannel={(newChannel) => setChannel(newChannel)}/> {/* inte klar, skrev av från Henning, funkade ej*/}
+      <ProgramList channelName="SVT 1" />
+      
     </div>
   );
 }

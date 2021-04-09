@@ -1,10 +1,17 @@
 ﻿import React, {useEffect, useState} from 'react';
 
-const ProgramList = () => {
+const ProgramList = ({channelName}) => { // const channelName = "SVT1"
+
+    var url = "https://tv-api-p2x2o.ondigitalocean.app/" + channelName + ".json"; // `https://tv-api-p2x2o.ondigitalocean.app/${channelName}.json`
     
     const [programs, setPrograms] = useState([]); // från början en tom array
 
     useEffect(() => {
+        /*if (programs.length === 0) {
+
+        }
+        const resp = await fetch(url);*/
+
         const fetchPrograms = async () => {
             const programData = await fetch(
                 'https://tv-api-p2x2o.ondigitalocean.app/SVT 1.json'
@@ -12,6 +19,7 @@ const ProgramList = () => {
             
             setPrograms(programData);
         };
+        
         if(!programs.length) {
             fetchPrograms();
         }

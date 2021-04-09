@@ -1,0 +1,27 @@
+﻿[
+    {
+        "title": "SVT 1",
+        "url": "/svt1",
+        "endpoint": "https://tv-api-p2x2o.ondigitalocean.app/SVT%201.json"
+    },
+    {
+        "title": "SVT 2",
+        "url": "/svt2",
+        "endpoint": "https://tv-api-p2x2o.ondigitalocean.app/SVT%202.json"
+    },
+    {
+        "title": "SVT Barn",
+        "url": "/svtbarn",
+        "endpoint": "https://tv-api-p2x2o.ondigitalocean.app/SVT%20Barn.json"
+    },
+    {
+        "title": "Kunskapskanalen",
+        "url": "/kunskapskanalen",
+        "endpoint": "https://tv-api-p2x2o.ondigitalocean.app/Kunskapskanalen.json"
+    },
+    {
+        "title": "SVT 24",
+        "url": "/svt24",
+        "endpoint": "https://tv-api-p2x2o.ondigitalocean.app/SVT%2024.json"
+    }
+]
