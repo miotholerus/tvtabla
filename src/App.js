@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar setChannel={(newChannel) => setChannel(newChannel)}/> {/* inte klar, skrev av från Henning, funkade ej*/}
+      <Sidebar /> {/* <Sidebar setChannel={(newChannel) => setChannel(newChannel)}/> skrev av från Henning, funkade ej*/}
       <ProgramList channelName="SVT 1" />
       
     </div>
