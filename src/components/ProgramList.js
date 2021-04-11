@@ -1,45 +1,40 @@
 ﻿import React, {useEffect, useState} from 'react';
 
-const ProgramList = ({channelName}) => { // const channelName = "SVT1"
+const ProgramList = ({channelName}) => { // const channelName = "SVT 1"
 
-    var url = "https://tv-api-p2x2o.ondigitalocean.app/" + channelName + ".json"; // `https://tv-api-p2x2o.ondigitalocean.app/${channelName}.json`
+    const url = "https://tv-api-p2x2o.ondigitalocean.app/" + channelName + ".json"; // `https://tv-api-p2x2o.ondigitalocean.app/${channelName}.json`
     
-    const [programs, setPrograms] = useState([]); // från början en tom array
+    const [programs, setProgramsFromJson] = useState([]); // från början en tom array
 
-    useEffect(() => {
-        /*if (programs.length === 0) {
-
-        }
-        const resp = await fetch(url);*/
-
-        const fetchPrograms = async () => {
-            const programData = await fetch(
-                'https://tv-api-p2x2o.ondigitalocean.app/SVT 1.json'                // nu syns av någon anledning inte programlistan :C
-            ).then((res) => res.json());
-            
-            setPrograms(programData);
-        };
+    useEffect(async () => {
+        const response = await fetch(url); 
+        const programData = await response.json();
         
-        if(!programs.length) {
-            fetchPrograms();
-        }
-    })
+        setProgramsFromJson(programData);    
+        
+    }, [channelName]); // the way we determine when to call this function is that we pass an array of properties (all our dependencies)
 
     return (<div>
-        <h1 class="channel-title">
-            SVT 1
+        <h1 className="channel-title">
+            {channelName}
         </h1>
-        <ul class="program-list">
+        <ul className="program-list">
             {
-                programs.map((program) => {
-                    <li class="program-list__item">
-                        {program.start}
+                programs.map((program) => 
+                    <li className="program-list__item">
+                        {program.start.substring(11, 16)}
                         <br />
                         {program.name}
-                    </li>}
+                    </li>
                 )
             }
             
+            {/* programs.map((program) => // channel - en entitet i json-listan
+                <li class="program-list__item">
+                    {channel.title} {// de attribut vi vill visa
+                    }
+                </li>
+            ) */}
 
             {/* <li class="program-list__item">
                 13:30<br/>
@@ -50,7 +45,8 @@ const ProgramList = ({channelName}) => { // const channelName = "SVT1"
                 Vinterstudion
             </li> */}
         </ul>
-    </div>)
+    </div>
+    )
 }
 
 export default ProgramList;
