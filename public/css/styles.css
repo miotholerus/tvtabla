@@ -42,3 +42,7 @@ body {
     background-color: #888;
     color: white;
 }
+a:not([href]):not([tabindex]) {
+    color: white;
+    text-decoration: none;
+}

@@ -1,15 +1,25 @@
-﻿import React, {useEffect, useState} from 'react';
+﻿import React, { useEffect, useState } from 'react';
+import { useHistory } from "react-router-dom";
 
-const Sidebar = ({setChannel}) => {
-    return (
-        <div className="menu">
-            <a className="menu__link" href="/svt1" onClick= {() => setChannel("SVT 1")}>SVT 1</a>
-            <a className="menu__link" href="/svt2" onClick= {() => setChannel("SVT 2")}>SVT 2</a>
-            <a className="menu__link" href="/svtbarn" onClick= {() => setChannel("SVT Barn")}>SVT Barn</a>
-            <a className="menu__link" href="/kunskapskanalen" onClick= {() => setChannel("Kunskapskanalen")}>Kunskapskanalen</a>
-            <a className="menu__link" href="/svt24" onClick= {() => setChannel("SVT 24")}>SVT 24</a>
-        </div>
-    )
+const Sidebar = ({ setChannel }) => {
+  let history = useHistory();
+
+  function handleChannelChange(e, channel, link) {
+    e.preventDefault();
+
+    // Gå till rätt adress
+    // setChannel?
+  }
+
+  return (
+    <div className="menu">
+      <a className="menu__link" onClick={(e) => handleChannelChange(e, "SVT 1", "/svt1")}>SVT 1</a> {/* Hantera länkarna i handle... */}
+      <a className="menu__link" onClick={(e) => handleChannelChange(e, "SVT 1", "/svt1")}>SVT 2</a>
+      <a className="menu__link" onClick={() => setChannel("SVT Barn")}>SVT Barn</a>
+      <a className="menu__link" onClick={() => setChannel("Kunskapskanalen")}>Kunskapskanalen</a>
+      <a className="menu__link" onClick={() => setChannel("SVT 24")}>SVT 24</a>
+    </div>
+  )
 }
 
 // const Sidebar = (setChannel) => {
@@ -17,7 +27,7 @@ const Sidebar = ({setChannel}) => {
 //     const [channels, setChannelsFromJson] = useState([]);
 
 //     useEffect(() => {
-        
+
 //         const fetchChannels = async () => {
 //             const response = await fetch('channellist.json');
 //             const channelData = await response.json();
@@ -28,7 +38,7 @@ const Sidebar = ({setChannel}) => {
 //         if (!channels.length) { // om den är tom
 //             fetchChannels();
 //         }
-        
+
 //     });
 
 //     // Genvägen:
@@ -61,9 +71,9 @@ const Sidebar = ({setChannel}) => {
 //                         }
 //                     </a>
 //                 )
-                
+
 //             }
-            
+
 //         </ul>
 //     )
 // }
